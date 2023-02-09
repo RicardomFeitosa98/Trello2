@@ -1,18 +1,20 @@
-class Login{
-    constructor(usuario,senha){
-       this.usuario = usuario
-       this.senha = senha
-       Object.freeze(this)
-    }
-    get usuario () {
+class Login {
 
-        return this.usuario
+    constructor(usuario,senha) {
 
+        Object.assign(this, {usuario,senha})
+            Object.freeze(this);
     }
 
-    get senha () {
+     
 
-        return this.senha
+    get usuario() {
+
+        return this.usuario;
     }
 
+    get senha() {
+
+        return this.senha;
+    }
 }

@@ -5,6 +5,7 @@ class LoginController{
         this.inputSenha = $("#pword")
         this.alerter =new LoginView()
         this.loginlist = new LoginList
+       
         
     }
     submit(event){
@@ -17,7 +18,7 @@ class LoginController{
         }
         else{
            this.alerter.failure()
-          
+           this.loginlist.adiciona(this.inputUsuario.value,this.inputSenha.value)
            this.cleanform()
         }
 
@@ -27,6 +28,8 @@ class LoginController{
         this.inputUsuario.value =""
         this.inputSenha.value= ""
     }
+
+    
     
 
 

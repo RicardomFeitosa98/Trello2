@@ -1,10 +1,13 @@
 loginarray = ["ricardo","feitosa"]
+atempts = []
 class LoginList{
+    
 
-check() { 
-    if(loginarray.includes("ricardo"))
-    console.log("tá ai")
-}
+    adiciona(login, password) {
+
+        atempts.push(login);
+        atempts.push(password)
+    }
    
 
 
