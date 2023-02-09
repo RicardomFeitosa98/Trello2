@@ -1,4 +1,4 @@
-let controller = new LoginController();
+let controller = new RegistrationController();
 document
     .querySelector('#form2')
-    .addEventListener('submit',controller.submit.bind(controller));     
+    .addEventListener('submit',controller.register.bind(controller));     

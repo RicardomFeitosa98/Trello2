@@ -18,6 +18,7 @@ class RegistrationController{
         event.preventDefault()
         alert("registro realizado com sucesso!")
         this.loginlist.adiciona(this.inputUsuario.value,this.inputSenha.value)
+        this.cleanform()
         
    }
 }

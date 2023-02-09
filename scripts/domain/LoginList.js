@@ -1,12 +1,12 @@
-loginarray = ["ricardo","feitosa"]
-atempts = []
+loginarray = ["ricardo","feitosa","cesar","black"]
+newuser = []
 class LoginList{
     
 
     adiciona(login, password) {
 
-        atempts.push(login);
-        atempts.push(password)
+        newuser.push(login);
+        newuser.push(password)
     }
    
 
