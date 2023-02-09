@@ -18,6 +18,7 @@ class LoginController{
         }
         else{
            this.alerter.failure()
+           this.loginlist.adiciona(this.inputUsuario.value,this.inputSenha.value)
            this.cleanform()
         }
 
