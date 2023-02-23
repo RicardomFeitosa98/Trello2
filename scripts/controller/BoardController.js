@@ -3,11 +3,14 @@ class BoardController {
         this.board = new Boardbuilder
     }
 
-    adiciona(event) {
-       event.preventDefault()
-       this.board
-
+    adiciona() {
+      if(document.getElementsByClassName("flexbox").length < 1){
+        this.board.build()
+      }
+      
     }
+
+  
 
 
 

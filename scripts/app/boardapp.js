@@ -1,4 +1,3 @@
-let controller = new BoardController();
-document
-    .querySelector('#test')
-    .addEventListener('submit',controller.adiciona.bind(controller));     
+let controler = new BoardController();
+let b1 = document.getElementById("test")
+b1.addEventListener("click",controler.adiciona.bind(controler))
