@@ -5,16 +5,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hub</title>
+    <link rel="stylesheet" href="css/hub.css">
 </head>
 <body>
-    <H1>Bem vindo!</H1>
-    <h2> aqui estão suas boards</h2>
-    <button> board 1</button>
-    <button>board 2</button>
-    <button> board 3</button>
-    <br> <br> <br>
-    <button>adiciona</button> 
-    <button>apaga</button>
+    <div id="pghead">
+        <h1 >Bem vindo!</h1>
+        <h2 > Aqui estão suas boards</h2>
+        </div>
+
+    
+  
+    <button id="b1">Adiciona</button> 
+    <button id="b2" onclick="apagaboard()">Apaga</button>
+    <script src="scripts/builders/Boardbuilder.js"></script>
+    <script src="scripts/controller/BoardController.js"></script>
+    <script src="scripts/app/boardapp.js"></script>
+    <script>
+
+
+ function apagaboard(){
+document.getElementById("board1").remove()
+
+ }
+
+
+
+
+    </script>
     
 </body>
 </html>

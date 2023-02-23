@@ -24,3 +24,28 @@ body{
     background-color:whitesmoke 
     
 }
+#b1{
+    position: fixed;
+    bottom: 500px;
+    right: 950px
+}
+#b2{
+    position: fixed;
+    bottom: 500px;
+    right: 800px;
+}
+.board{
+    text-align: center;
+    background-color: rgb(85, 183, 201);;
+    width: 150px;
+    height: 150px;
+    border: 3px solid rgb(166, 6, 180);
+      
+      
+}
+#board1{
+    position: fixed;
+    bottom: 60%;
+    right: 60%;
+
+}
