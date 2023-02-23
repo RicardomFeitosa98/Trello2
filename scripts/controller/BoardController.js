@@ -3,9 +3,10 @@ class BoardController {
         this.board = new Boardbuilder
     }
 
-    adiciona() {
+    adiciona(event) {
+       event.preventDefault()
        this.board
-       
+
     }
 
 
