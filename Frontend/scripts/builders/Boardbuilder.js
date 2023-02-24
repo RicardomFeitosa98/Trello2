@@ -9,6 +9,10 @@ build(id) {
     b1.id= id
     b1.innerHTML="<h1>nova board</h1>"
     document.body.appendChild(b1)
+    document.getElementById(id).addEventListener('click', function() {
+        location.href = 'postitboard.html'
+    }, false);
+    
          
 }
 

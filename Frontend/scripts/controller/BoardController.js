@@ -18,10 +18,23 @@ class BoardController {
       }
       
     }
-apagaboard(){
-document.getElementById("board1").remove()
-
- }
+    apagaboard(){
+      if(document.getElementsByClassName("board").length ==3 ){
+        document.getElementById("board3").remove()
+        return
+        
+      }
+      if(document.getElementsByClassName("board").length ==2){
+        document.getElementById("board2").remove()
+        return
+        
+      }
+      if(document.getElementsByClassName("board").length ==1){
+        document.getElementById("board1").remove()
+        return
+      }
+    
+     }
   
 
 
