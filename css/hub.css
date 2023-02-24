@@ -49,3 +49,15 @@ body{
     right: 60%;
 
 }
+#board2{
+    position: fixed;
+    bottom: 60%;
+    right: 40%;
+
+}
+#board3{
+    position: fixed;
+    bottom: 60%;
+    right: 20%;
+
+}
