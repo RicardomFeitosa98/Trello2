@@ -17,7 +17,7 @@ class LoginController{
         body: JSON.stringify({ usuario, senha }),
       };
         event.preventDefault()
-        fetch('http://localhost:3001/api/users')
+        fetch('http://localhost:3001/api/auth', parametros)
         .then(response => response.json())
         .then(data => {
         console.log(data);

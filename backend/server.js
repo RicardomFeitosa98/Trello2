@@ -17,7 +17,20 @@ const server = http.createServer(async (req, res) => {
       res.statusCode = 500;
       res.end('Erro interno do servidor');
     }
-      } else {
+  
+      }
+  if(req.method === "POST" && req.url ==="/api/auth") {
+     res.setHeader('Content-Type', 'application/json');
+     res.on("readable", function(){
+        body += res.read();
+     })
+     res.on('end', function(){
+        console.log(body)
+        res.write("OK")
+        res.end()
+     }) 
+  }
+  else {
     res.statusCode = 404;
     res.end('Não encontrado');
   }
