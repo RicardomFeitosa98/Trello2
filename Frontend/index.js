@@ -4,7 +4,7 @@ const path = require('path');
 
 // Cria o servidor
 const server = http.createServer((req, res) => {
-  // Obtém o caminho absoluto do arquivo a ser servido
+    // Obtém o caminho absoluto do arquivo a ser servido
   const filePath = path.join(__dirname, 'Content', req.url === '/' ? 'index.html' : req.url);
 
   // Verifica se o arquivo existe

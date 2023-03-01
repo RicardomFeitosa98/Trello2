@@ -14,29 +14,21 @@ class LoginController{
       const parametros = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ usuario, senha }),
+        body: '{"username":"ricardo","password":"edson"}',
       };
         event.preventDefault()
         fetch('http://localhost:3001/api/auth', parametros)
         .then(response => response.json())
         .then(data => {
-        console.log(data);
-      })
+          console.log(data)
+          })
       .catch(error => {
+        console.log("aqui é o erro")
         console.error(error);
       });
         console.log(this.inputUsuario.value)
         console.log(this.inputSenha.value)
-        if(loginarray.includes(this.inputUsuario.value) && loginarray.includes(this.inputSenha.value)){
-        this.alerter.sucess()
-        location.href = "postitboard.html"
-        }
-        else{
-           this.alerter.failure()
-           this.loginlist.adiciona(this.inputUsuario.value,this.inputSenha.value)
-           this.cleanform()
-        }
-
+               
     }
 
     cleanform (){

@@ -6,7 +6,14 @@ const database = require('./database');
 const port = 3001;
 
 const server = http.createServer(async (req, res) => {
-  res.setHeader('Access-Control-Allow-Origin', '*'); // habilita CORS para todas as origens
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader("Access-Control-Allow-Methods", "DELETE, POST, GET, OPTIONS")
+  res.setHeader("Access-Control-Allow-Headers", "*") 
+
+  if(req.method === 'OPTIONS'){
+    res.statusCode = 200
+    res.end()
+  }
 
   if (req.method === 'GET' && req.url === '/api/users') {
     try {
@@ -18,17 +25,13 @@ const server = http.createServer(async (req, res) => {
       res.end('Erro interno do servidor');
     }
   
-      }
+  }
   if(req.method === "POST" && req.url ==="/api/auth") {
-     res.setHeader('Content-Type', 'application/json');
-     res.on("readable", function(){
-        body += res.read();
-     })
-     res.on('end', function(){
-        console.log(body)
-        res.write("OK")
-        res.end()
-     }) 
+     res.end('{"message":"Ok!"}')
+    if(JSON.stringify(database.users).includes('{"username":"ricardo","password":"edson"}') ){
+      res.end('{"message":"Carro"}')
+    }
+       
   }
   else {
     res.statusCode = 404;
