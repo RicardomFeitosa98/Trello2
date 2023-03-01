@@ -9,7 +9,20 @@ class LoginController{
         
     }
     submit(event){
+      const parametros = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ usuario, senha }),
+      };
         event.preventDefault()
+        fetch('http://localhost:3001/api/users', parametros)
+        .then(response => response.json())
+        .then(data => {
+        console.log(data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
         console.log(this.inputUsuario.value)
         console.log(this.inputSenha.value)
         if(loginarray.includes(this.inputUsuario.value) && loginarray.includes(this.inputSenha.value)){
