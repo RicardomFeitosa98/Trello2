@@ -18,14 +18,24 @@ class LoginController{
       };
         event.preventDefault()
         fetch('http://localhost:3001/api/auth', parametros)
-        .then(response => response.json())
-        .then(data => {
-          console.log(data)
-          })
-      .catch(error => {
-        console.log("aqui é o erro")
-        console.error(error);
-      });
+          .then(response => response.json())
+          .then(data => {
+            console.log(data)
+            const postData = JSON.stringify(data)
+            console.log (postData)
+            if(postData =='{"message":"OK"}'){
+              this.alerter.sucess()
+              location.href ="boardhub.html"
+              
+            }
+            else{
+              this.alerter.failure()
+            }
+            })
+        .catch(error => {
+          console.log("aqui é o erro")
+          console.error(error);
+        });
         console.log(this.inputUsuario.value)
         console.log(this.inputSenha.value)
                
