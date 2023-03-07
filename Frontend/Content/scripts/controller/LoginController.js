@@ -11,13 +11,17 @@ class LoginController{
     submit(event){
       const usuario =  this.inputUsuario.value
       const senha = this.inputSenha.value
-      const userinfo = usuario+senha
+      const userinfo = {
+        "username":usuario,
+        "password":senha,
+      }
+      console.log(usuario)
+      console.log(senha)
       const parametros = {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(usuario)
+        body: JSON.stringify(userinfo)
       };
-      console.log(userinfo.toString())
         event.preventDefault()
         fetch('http://localhost:3001/api/auth', parametros)
           .then(response => response.json())

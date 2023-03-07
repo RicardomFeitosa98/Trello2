@@ -31,15 +31,33 @@ const server = http.createServer(async (req, res) => {
      
       req.on('data', (data) => {
         requestBody += data.toString();
-      });
+        });
       
       req.on('end', () => {
-        if(JSON.stringify(database.users).includes(requestBody) == true){
+        const postData = JSON.parse(requestBody)
+        /*/console.log(postData)
+        console.log(requestBody)
+        console.log(JSON.stringify(database.users))
+        console.log(database.users)
+        console.log (JSON.stringify(database.users).includes(requestBody))*/
+        for (let index = 0; index < database.users.length; index++) {
+          const element = database.users[index];
+          if(element['username']=== postData['username']){
+            if(element['password']=== postData['password']){
+              res.end('{"message":"OK"}')  
+            }
+            else{
+              res.end('{"message":"Senha incorreta"}')
+            }
+          }
+          
+        }
+        if(JSON.stringify(database.users).includes(requestBody)){
           res.end('{"message":"OK"}') 
 
         }
         else{
-          console.log(requestBody)
+          
           res.end('{"message":"tenho depressão"}')
         }
    

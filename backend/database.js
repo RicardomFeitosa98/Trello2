@@ -19,7 +19,29 @@ var users = [
         ]
       }
     ]
+  },
+  {
+    "username":"malu",
+    "password":"edson",
+    "boards":[
+      {
+        "name":"Chubii",
+        "issues":[
+          {
+            "column":0,
+            "order":0,
+            "content":"Rogerinho"
+          },
+          {
+            "column":1,
+            "order":0,
+            "content":"Claudinho"
+          }
+        ]
+      }
+    ]
   }
+
 ];
 
 module.exports = {users};
