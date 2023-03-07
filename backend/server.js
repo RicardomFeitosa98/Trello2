@@ -28,15 +28,18 @@ const server = http.createServer(async (req, res) => {
   }
   if(req.method === "POST" && req.url ==="/api/auth") {
       let requestBody = ''
+     
       req.on('data', (data) => {
         requestBody += data.toString();
       });
+      
       req.on('end', () => {
-        if('{"username":"ricardo","password":"edson"}' == requestBody){
+        if(JSON.stringify(database.users).includes(requestBody) == true){
           res.end('{"message":"OK"}') 
 
         }
         else{
+          console.log(requestBody)
           res.end('{"message":"tenho depressão"}')
         }
    
